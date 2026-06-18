@@ -10,7 +10,7 @@ Standard deepfake detectors are prone to high false-positive rates on authentic 
 
 ### 🛠️ Technical Architecture
 *   **Feature Extraction:** Utilizes a frozen **DINOv2 (ViT-Small)** backbone, leveraging its self-supervised pre-training to capture fine-grained spatial and geometric inconsistencies.
-*   **Stage 1: Supervised Fine-Tuning (SFT):** Established a baseline by training a classification head on the DFDC (Deepfake Detection Challenge) dataset.
+*   **Stage 1: Supervised Fine-Tuning (SFT):** Established a baseline by training a classification head on the DFDC [Deepfake Detection Challenge](https://www.kaggle.com/c/deepfake-detection-challenge) dataset.
 *   **Stage 2: Direct Preference Optimization (DPO):** Aligned the model using a manually curated dataset of **106 human preference pairs**. The model was optimized using a KL-constrained log-ratio loss to shift the decision boundary toward "convincing" fakes.
 
 ### 📈 Experimental Results (Empirical Proof)
@@ -18,9 +18,9 @@ The alignment phase yielded significant improvements in model calibration and sp
 
 | Sample Type | SFT Baseline | **DPO Aligned (Ours)** | Impact |
 | :--- | :--- | :--- | :--- |
-| **High-Threat Fake** | 71% | **95%** | **Increased Sensitivity (+24%)** |
-| **Obvious/Glitched Fake** | 93% | 77% | Better Calibration |
-| **Authentic Real** | 60% | **9%** | **Reduced False Positives (-51%)** |
+| **High-Threat Fake** | 72.5% | **97.5%** | **Increased Sensitivity (+24.9%)** |
+| **Obvious/Glitched Fake** | 93.4% | 77.1% | Better Calibration |
+| **Authentic Real** | 60.2% | **9.6%** | **Reduced False Positives (-50.6%)** |
 
 **Key Finding:** DPO not only sharpened the detection of seamless fakes but also taught the model to distinguish between "artifact noise" and "authentic human textures," drastically reducing false alarms on real images.
 
