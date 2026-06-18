@@ -51,6 +51,7 @@ The included **Streamlit Console** allows users to:
 
   <br/>
 
+[Streamlit App](https://github.com/user-attachments/assets/2fe2f067-0c43-4417-9296-33bbd09b318f)
 
 </div>
 
