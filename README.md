@@ -41,6 +41,10 @@ The included **Streamlit Console** allows users to:
    ```bash
    streamlit run app.py
    ```
+3. **Production Deployment:**
+
+   > "The model is architected for production-grade serving via **Amazon SageMaker Inference Containers**. I implemented a custom **Inference Handler** (`inference.py`) to manage the model lifecycle. For local validation and cost-efficiency, the service can be orchestrated using **Docker** with **emulated x86_64 architecture** on Apple Silicon, exposing a REST API on port 8080."
+
 
 ---
 
@@ -57,4 +61,7 @@ The included **Streamlit Console** allows users to:
 
 
 ---
+
+
+
 
